@@ -1,0 +1,95 @@
+Car_Dekho portfolio projetc for data analysis
+
+Q1). Read Car Data
+select * 
+from car_dekho
+
+Q2) Total Cars : To get a ount of total records.
+select count(*) from car_dekho
+
+Q3). The managr asked the employee How many cars is available on 2023?
+SELECT 
+    COUNT(*)
+FROM
+    car_dekho
+WHERE
+    year > 2022
+
+Q4).  The managr asked the employee How many cars is available on 20,21,22?
+SELECT 
+    COUNT(*)
+FROM
+    car_dekho
+WHERE
+    year IN (2020 , 2021, 2022)
+GROUP BY year
+
+Q5). Client asked me to print the total oa all cars by year. I dont see all the details.
+SELECT 
+    COUNT(*) AS no_of_car, year
+FROM
+    car_dekho
+
+Q6). Client asked to car dealer How many diesel cars will there be in 2020?
+SELECT 
+    COUNT(*)
+FROM
+    car_dekho
+WHERE
+    fuel = 'diesel' AND year = 2020
+
+Q7). Client requested a car dealer agent How many petrol car will be there i n 2020?
+SELECT 
+    COUNT(*)
+FROM
+    car_dekho
+WHERE
+    fuel = 'petrol' AND year = 2020
+
+Q8). The manager told the employee to give a print all the fuel cars (petrol,diesel,and cng) come by all year.
+SELECT 
+    year, COUNT(*)
+FROM
+    car_dekho
+WHERE
+    fuel = 'petrol' & 'diesel' & 'cng'
+GROUP BY year
+ 
+Q9). Manager said there were more than 100 cars in a given year, which year had more than 100 cars?
+SELECT 
+    year, COUNT(*)
+FROM
+    car_dekho
+GROUP BY year
+HAVING COUNT(*) > 100;
+
+Q10). The manager said to the employee all cars count details between 2015 and 2023.
+SELECT 
+    COUNT(*)
+FROM
+    car_dekho
+WHERE
+    year BETWEEN '2015' AND '2023'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
